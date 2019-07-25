@@ -13,13 +13,14 @@ class WeatherFromWeb
 {
 private:
     std::string m_city = "Boston";
-    std::string m_appKey; //TODO: default to my appkey, create plain constructor
+    std::string m_appKey = "4f59e98118b4a0a4c263b2890cb2ea2f";
     std::string m_openWeatherUrl;
     nlohmann::json m_jsonWeatherData;
     WeatherDataPacket m_WeatherData;
 
     void setOpenWeatherUrl();
 public:
+    WeatherFromWeb();
     WeatherFromWeb(std::string configFile);
     virtual ~WeatherFromWeb();
 

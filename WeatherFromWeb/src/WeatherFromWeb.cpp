@@ -1,5 +1,7 @@
 #include "WeatherFromWeb.h"
 
+WeatherFromWeb::WeatherFromWeb() {}
+
 WeatherFromWeb::WeatherFromWeb(std::string configFile)
 {
     std::ifstream file(configFile);
