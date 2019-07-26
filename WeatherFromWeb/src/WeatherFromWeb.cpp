@@ -1,6 +1,10 @@
+#include <iostream>
 #include "WeatherFromWeb.h"
 
-WeatherFromWeb::WeatherFromWeb() {}
+WeatherFromWeb::WeatherFromWeb() 
+{
+    setOpenWeatherUrl();
+}
 
 WeatherFromWeb::WeatherFromWeb(std::string configFile)
 {
@@ -55,14 +59,14 @@ void WeatherFromWeb::updateWeatherDataPacket()
     else if (r.status_code == 404)
     {
         //throw exception
-        // std::cerr << "Failed updating weather data, code: "
+        std::cerr << "Failed updating weather data, code: ";
         //     << r.status_code << std::endl;
     }
     else
     {
         //throw exception
-        // std::cerr << "Failed updating weather data, code: "
-        //     << r.status_code << std::endl;
+        std::cerr << "Failed updating weather data, code: "
+            << r.status_code << std::endl;
     }
 }
 
