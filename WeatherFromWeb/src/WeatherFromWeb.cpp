@@ -4,6 +4,7 @@
 WeatherFromWeb::WeatherFromWeb() 
 {
     setOpenWeatherUrl();
+    updateWeatherDataPacket();
 }
 
 WeatherFromWeb::WeatherFromWeb(std::string configFile)
@@ -16,6 +17,7 @@ WeatherFromWeb::WeatherFromWeb(std::string configFile)
         file.close();
         m_appKey = jsonConfig.at("open_weather").at("app_key");
         setOpenWeatherUrl();
+        updateWeatherDataPacket();
     }
     else
     {
